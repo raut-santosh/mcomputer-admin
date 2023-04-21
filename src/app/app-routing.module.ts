@@ -1,9 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LayoutsModule } from './layouts/layouts.module';
-import { TemplateModule } from './template/template.module';
-import { DashboardModule } from './components/dashboard/dashboard.module';
-import { AuthModule } from './auth/auth.module';
 const routes: Routes = [
   {
     path: '',
@@ -13,6 +9,10 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./components/dashboard/dashboard.module').then( m => m.DashboardModule)
+  },
+  {
+    path: 'webcontent',
+    loadChildren: () => import('./components/webcontent/webcontent.module').then( m => m.WebcontentModule)
   },
   {
     path: 'templates',
